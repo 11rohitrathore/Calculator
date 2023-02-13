@@ -1,0 +1,23 @@
+from tkinter import *
+
+root = Tk()
+expression ="z"
+def setexpression(num):
+    global expression
+    expression = expression + str(num)
+    value.set(expression)
+
+def calculator():
+    try:
+        global expression
+        answer =str(eval(expression))
+        value.set(answer)
+    except:
+        value.set("Enter correct expression")
+        expression = ""
+
+def AC():
+    global expression
+    expression = ""
+    value.set(expression)
+root.geometry("430x495")
